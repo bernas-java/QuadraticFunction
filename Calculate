@@ -2,13 +2,13 @@ package main;
 
 public class Calculate {
 
-    public static double function(double a,double b,double c) {
-        double x1,x2;
-        double delta = Math.pow(b,2)-4*a*c;
+    public static Double[] function(double a,double b,double c) {
+        Double x1,x2;
+        Double delta = Math.pow(b,2)-4*a*c;
         System.out.println(delta);
         if(delta<0) {
-            x1 = 666.0;
-            x2 = 666.0;
+            x1 = null;
+            x2 = null;
         }
         else if(delta>0) {
             x1=(-b-Math.sqrt(delta))/2;
@@ -16,9 +16,13 @@ public class Calculate {
         }
         else {
             x1 = -b/(2*a);
-            x2 = 666.0;
+            x2 = null;
         }
-        return x1;
+        Double[] ret = new Double[2];
+        ret[0] = x1;
+        ret[1] = x2;
+
+        return ret;
     }
 
 }
