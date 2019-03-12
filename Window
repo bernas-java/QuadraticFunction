@@ -52,9 +52,26 @@ public class Window extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Calculate calc = new Calculate();
-        Double zero[] = calc.function(-6,3,-1);
-        System.out.println(zero[0]+" "+zero[1]);
+        String x1, x2;
+        Double a,b,c;
+        a = Double.parseDouble(TfieldA.getText());
+        b = Double.parseDouble(TfieldB.getText());
+        c = Double.parseDouble(TfieldC.getText());
+        Double zero[] = calc.function(a,b,c);
 
+        if(zero[0] != null) {
+            x1 = Double.toString(zero[0]);
+        }
+        else {
+            x1 = "null";
+        }
+        if(zero[1] != null) {
+            x2 = Double.toString(zero[1]);
+        }
+        else {
+            x2 = "null";
+        }
+        lx1.setText(x1);
+        lx2.setText(x2);
     }
 }
-
