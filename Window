@@ -8,7 +8,10 @@ import java.awt.event.ActionListener;
 public class Window extends JFrame implements ActionListener {
 
     JButton bCalculate;
-    JLabel lTitle;
+    JLabel lTitle,lx1,lx2;
+    JTextField TfieldA = new JTextField(1);
+    JTextField TfieldB = new JTextField(1);
+    JTextField TfieldC = new JTextField(1);
 
     public Window() {
 
@@ -27,13 +30,31 @@ public class Window extends JFrame implements ActionListener {
         lTitle.setForeground(Color.blue);
         lTitle.setFont(new Font("Verdana",Font.BOLD,20));
         add(lTitle);
+        lx1 = new JLabel("x1 = 0");
+        lx1.setBounds(getWidth()/2-175,270,365,20);
+        lx1.setForeground(Color.RED);
+        lx1.setFont(new Font("Verdana",Font.BOLD,15));
+        add(lx1);
+        lx2 = new JLabel("x2 = 0");
+        lx2.setBounds(getWidth()/2+125,270,365,20);
+        lx2.setForeground(Color.RED);
+        lx2.setFont(new Font("Verdana",Font.BOLD,15));
+        add(lx2);
+        TfieldA.setBounds(getWidth()/2-175,150,121,20);
+        add(TfieldA);
+        TfieldB.setBounds(getWidth()/2-54,150,121,20);
+        add(TfieldB);
+        TfieldC.setBounds(getWidth()/2+67,150,121,20);
+        add(TfieldC);
 
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         Calculate calc = new Calculate();
-        double x1 = calc.function(9,-12,4);
-        System.out.println(x1);
+        Double zero[] = calc.function(-6,3,-1);
+        System.out.println(zero[0]+" "+zero[1]);
+
     }
 }
+
