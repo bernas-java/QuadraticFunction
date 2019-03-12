@@ -1,0 +1,39 @@
+package main;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Window extends JFrame implements ActionListener {
+
+    JButton bCalculate;
+    JLabel lTitle;
+
+    public Window() {
+
+        setSize(800,600);
+        setTitle("Funkcja kwadratowa 1.0");
+        setVisible(true);
+        setResizable(false);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLayout(null);
+        bCalculate = new JButton("Oblicz");
+        bCalculate.setBounds(getWidth()/2-75,getHeight()/2-100,150,50);
+        bCalculate.addActionListener(this);
+        add(bCalculate);
+        lTitle = new JLabel("Funkcja kwadratowa version 1.0");
+        lTitle.setBounds(getWidth()/2-175,100,365,20);
+        lTitle.setForeground(Color.blue);
+        lTitle.setFont(new Font("Verdana",Font.BOLD,20));
+        add(lTitle);
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Calculate calc = new Calculate();
+        double x1 = calc.function(9,-12,4);
+        System.out.println(x1);
+    }
+}
