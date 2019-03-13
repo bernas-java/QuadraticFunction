@@ -5,7 +5,6 @@ public class Calculate {
     public static Double[] function(double a,double b,double c) {
         Double x1,x2;
         Double delta = Math.pow(b,2)-4*a*c;
-        System.out.println(delta);
         if(delta<0) {
             x1 = null;
             x2 = null;
@@ -18,11 +17,24 @@ public class Calculate {
             x1 = -b/(2*a);
             x2 = null;
         }
-        Double[] ret = new Double[2];
+        Double[] ret = new Double[3];
         ret[0] = x1;
         ret[1] = x2;
+        ret[2] = delta;
 
         return ret;
     }
 
+    public static Double[] PandQ(double a, double b,Double delta) {
+
+        Double p = -b/(2*a);
+        Double q = -Math.sqrt(delta)/(4*a);
+
+        Double[] pq = new Double[2];
+        pq[0] = p;
+        pq[1] = q;
+
+        return pq;
+
+    }
 }
