@@ -22,7 +22,7 @@ public class Window extends JFrame implements ActionListener {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
         bCalculate = new JButton("Oblicz");
-        bCalculate.setBounds(getWidth()/2-75,getHeight()/2-100,150,50);
+        bCalculate.setBounds(getWidth()/2-70,getHeight()/2-100,150,50);
         bCalculate.addActionListener(this);
         add(bCalculate);
         lTitle = new JLabel("Funkcja kwadratowa version 1.2");
@@ -36,7 +36,7 @@ public class Window extends JFrame implements ActionListener {
         lx1.setFont(new Font("Verdana",Font.BOLD,15));
         add(lx1);
         lx2 = new JLabel("x2 = 0");
-        lx2.setBounds(getWidth()/2+125,270,365,20);
+        lx2.setBounds(getWidth()/2+130,270,365,20);
         lx2.setForeground(Color.RED);
         lx2.setFont(new Font("Verdana",Font.BOLD,15));
         add(lx2);
@@ -73,5 +73,17 @@ public class Window extends JFrame implements ActionListener {
         }
         lx1.setText("x1 = "+x1);
         lx2.setText("x2 = "+x2);
+        DrawLine();
     }
+
+
+    public void DrawLine() {
+
+        Graphics g = this.getGraphics();
+        g.drawLine(getWidth()/2-175,450,getWidth()/2+190,450);
+        g.drawLine(getWidth()/2-74,440,getWidth()/2-74,460);
+        g.drawLine(getWidth()/2+85,440,getWidth()/2+85,460);
+
+    }
+
 }
