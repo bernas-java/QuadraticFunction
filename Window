@@ -1,3 +1,6 @@
+// bugs
+// zeros on the axis are not cleared before next task
+
 package main;
 
 import javax.swing.*;
